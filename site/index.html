@@ -92,6 +92,36 @@
       font-size: 1rem;
       padding: 0.9rem 2rem;
     }
+    .hero-nav-bubbles {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 1rem;
+      z-index: 4;
+    }
+    .hero-bubble {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 3px solid white;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 0;
+      box-shadow: inset 0 0 0 0 transparent;
+    }
+    .hero-bubble:hover {
+      border-color: #C9A87C;
+      transform: scale(1.2);
+    }
+    .hero-bubble.active {
+      background: #C9A87C;
+      border-color: white;
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+    }
     @media (max-width: 768px) {
       .hero {
         height: 70vh;
@@ -172,14 +202,25 @@
 
       <div class="hero-content">
         <div class="section-label">Custom Stone & Glass</div>
-        <h1 style="color: #ffffff;">Beautiful countertops built to last.</h1>
+        <h1 style="color: #ffffff;">Beautiful Countertops Built to Last.</h1>
         <p class="hero-subtitle" style="color: #ffffff;">
-          Family-owned expert fabrication and installation for kitchens, bathrooms, and commercial spaces across the Southeast for over 20 years.
+          Family-owned experts in the fabrication and installation of premium granite, quartz, marble, and quartzite countertops — plus custom glass shower enclosures, mirrors, and backsplashes.<br><br>Proudly serving Fayetteville, Pinehurst, and surrounding areas of North Carolina for over 20 years.
         </p>
         <div class="hero-actions">
           <a href="contact.html" class="btn">Schedule Consultation</a>
-          <a href="gallery.html" class="btn">View Gallery</a>
+          <a href="products.html" class="btn">View Our Products</a>
         </div>
+      </div>
+
+      <!-- Hero Navigation Bubbles -->
+      <div class="hero-nav-bubbles">
+        <button class="hero-bubble active" data-slide="0" aria-label="Go to slide 1"></button>
+        <button class="hero-bubble" data-slide="1" aria-label="Go to slide 2"></button>
+        <button class="hero-bubble" data-slide="2" aria-label="Go to slide 3"></button>
+        <button class="hero-bubble" data-slide="3" aria-label="Go to slide 4"></button>
+        <button class="hero-bubble" data-slide="4" aria-label="Go to slide 5"></button>
+        <button class="hero-bubble" data-slide="5" aria-label="Go to slide 6"></button>
+        <button class="hero-bubble" data-slide="6" aria-label="Go to slide 7"></button>
       </div>
     </section>
 
@@ -188,9 +229,9 @@
       <div class="container">
         <div class="section-header">
           <div class="section-label">Recent Projects</div>
-          <h2 class="section-title">Countertops in real homes</h2>
+          <h2 class="section-title">Crafted Stone Surfaces<br>in Real North Carolina Homes</h2>
           <p class="section-subtitle">
-            See how our custom stone surfaces transform kitchens and bathrooms across North Carolina.
+            Explore how our hand-selected granite, quartz, marble, and quartzite countertops transform kitchens and bathrooms across Fayetteville, Pinehurst, and surrounding areas — each project a unique blend of craftsmanship, design, and premium materials.
           </p>
         </div>
 
@@ -231,9 +272,13 @@
       <div class="container">
         <div class="section-header">
           <div class="section-label">Our Services</div>
-          <h2 class="section-title">From design to installation</h2>
+          <h2 class="section-title">From Design to Installation</h2>
           <p class="section-subtitle">
-            We handle every step of your project in-house—design consultation, precision fabrication, and professional installation.
+            Every successful countertop project starts with the right process — and at Olive Glass & Marble, we handle it all under one roof. From the moment you walk into our showroom to the final polish on your new surface, our in-house team manages the entire journey.
+            <br><br>
+            With over two decades of experience, we've refined a process that ensures quality, efficiency, and clear communication at every phase. You'll work with knowledgeable staff who guide you through design decisions, skilled fabricators who cut every slab with precision, and professional installers who treat your home with care.
+            <br><br>
+            Whether you're remodeling your kitchen, refreshing a bathroom, or building a new space, we make the experience straightforward, collaborative, and results-driven — from first sketch to final seal.
           </p>
         </div>
 
@@ -242,10 +287,10 @@
             <div class="card-label">01 · Design Consultation</div>
             <h3 class="card-title">Material selection & planning</h3>
             <p class="card-body">
-              Bring your cabinet drawings, photos, or ideas. We'll help you choose the perfect stone, finishes, and edge profiles that match your vision and budget.
+              Bring your cabinet drawings, inspiration photos, or design ideas — we'll help you choose the perfect slab and finishes to match your vision. From edge details to sink selections, we ensure your space is ready for its new look.
             </p>
             <ul class="card-list">
-              <li>Granite, marble, quartz & specialty stones</li>
+              <li>Granite, marble, quartz & more</li>
               <li>Edge profiles and finishing options</li>
               <li>Sink and appliance coordination</li>
             </ul>
@@ -255,7 +300,7 @@
             <div class="card-label">02 · Precision Fabrication</div>
             <h3 class="card-title">CNC-cut, hand-finished</h3>
             <p class="card-body">
-              Using state-of-the-art digital templating and precision cutting equipment, combined with hand finishing for a luxury feel. Every seam is planned for strength and beauty.
+              Using state-of-the-art digital templating and precision cutting equipment, combined with hand finishing for a luxury feel and high-end result. Every seam is carefully planned for strength, fit, and lasting beauty.
             </p>
             <ul class="card-list">
               <li>Digital ProLiner templating</li>
@@ -268,7 +313,7 @@
             <div class="card-label">03 · Professional Installation</div>
             <h3 class="card-title">Clean, on-time, respectful</h3>
             <p class="card-body">
-              Our in-house crews protect your home, properly set and level every surface, and leave everything polished and sealed. We work around your schedule.
+              Our in-house crews protect your home, properly set and level every surface, and leave everything polished, sealed, and ready to impress. We do our best to accommodate your schedule and keep the process smooth from start to finish.
             </p>
             <ul class="card-list">
               <li>Old countertop removal & disposal</li>
@@ -285,9 +330,9 @@
       <div class="container">
         <div class="section-header">
           <div class="section-label">Material Options</div>
-          <h2 class="section-title">Premium stones for every style</h2>
+          <h2 class="section-title">Premium Stones for Every Style</h2>
           <p class="section-subtitle">
-            Choose from full slabs or cost-effective remnant pieces. We offer granite, marble, quartz, and specialty materials.
+            From bold statement pieces to timeless classics, we offer a wide selection of materials to match any design vision. Choose from full slabs or cost-effective remnant pieces — perfect for kitchens, bathrooms, bars, and more.<br><br>Our curated inventory includes granite, marble, quartz, and quartzite, along with a selection of specialty stones. Whether you're drawn to the natural movement of granite, the soft elegance of marble, or the low-maintenance appeal of engineered quartz, we'll help you find the ideal surface for your space.<br><br>Our expert team is here to guide you through material comparisons, edge styles, and finish options — ensuring the stone you select aligns with your aesthetic, functionality needs, and budget.
           </p>
         </div>
 
@@ -295,7 +340,7 @@
           <article class="card">
             <h3 class="card-title">Granite — Bianco Antico</h3>
             <p class="card-body">
-              A classic choice. Each slab is unique, heat-resistant, and durable for high-traffic kitchens. Perfect for traditional and contemporary styles.
+              A durable and timeless choice with unique patterning and natural speckling. Granite is heat-resistant and ideal for kitchens, bathrooms, and outdoor use. Bianco Antico blends well in both traditional and transitional styles.
             </p>
             <div class="pill"><span class="pill-dot"></span>Natural Stone</div>
             <div style="height: 150px; background: url('assets/css/img/msi-granite-bianco-antico.png'); background-size: cover; background-position: center; border-radius: 8px; margin-top: 1rem;"></div>
@@ -305,7 +350,7 @@
           <article class="card">
             <h3 class="card-title">Quartzite — Taj Mahal</h3>
             <p class="card-body">
-              Ultra-durable engineered stone with natural elegance. Taj Mahal features striking veining and superior heat and scratch resistance.
+              A natural stone known for its elegant veining and creamy tones. Quartzite is harder than granite, offering superior resistance to heat, scratches, and daily wear — perfect for high-end kitchens and bathrooms.
             </p>
             <div class="pill"><span class="pill-dot"></span>Natural Stone</div>
             <div style="height: 150px; background: url('assets/css/img/msi-quartzite-taj-mahal.png'); background-size: cover; background-position: center; border-radius: 8px; margin-top: 1rem;"></div>
@@ -315,7 +360,7 @@
           <article class="card">
             <h3 class="card-title">Marble — Carrara White</h3>
             <p class="card-body">
-              Elegant and timeless. Perfect for islands, vanities, or feature walls where character matters. Requires sealing and careful maintenance.
+              Classic and refined, Carrara marble brings timeless beauty with soft veining and cool tones. Ideal for vanities, islands, and feature walls where elegance and character are key. Requires sealing and care to preserve its finish.
             </p>
             <div class="pill"><span class="pill-dot"></span>Natural Stone</div>
             <div style="height: 150px; background: url('assets/css/img/msi-marble-carrara-white.png'); background-size: cover; background-position: center; border-radius: 8px; margin-top: 1rem;"></div>
@@ -325,7 +370,7 @@
           <article class="card">
             <h3 class="card-title">Quartz — Calacatta Miraggio Gold</h3>
             <p class="card-body">
-              Engineered for consistency and low maintenance. This premium quartz offers luxe veining and warmth. Ideal for modern and elegant spaces.
+              A premium engineered stone designed for uniformity and easy upkeep. Featuring bold veining and warm undertones, it's perfect for modern kitchens, baths, and spaces where durability meets sophistication.
             </p>
             <div class="pill"><span class="pill-dot"></span>Engineered</div>
             <div style="height: 150px; background: url('assets/css/img/msi-quartz-calacatta-miraggio-gold.png'); background-size: cover; background-position: center; border-radius: 8px; margin-top: 1rem;"></div>
@@ -337,17 +382,19 @@
 
     <!-- Video Section -->
     <section class="video-section" style="background: var(--surface); padding: 50px 0 0 0;">
-      <div class="container" style="text-align: center;">
-        <h2 style="font-size: 2rem; color: var(--text-main); margin-bottom: 20px;">Your Dream Countertop Starts With the Perfect Slab</h2>
-        <p style="font-size: 1rem; color: var(--text-muted); margin-bottom: 30px;">
-          Visit our slab yard and hand-select the stone that speaks to your style.<br>Every project begins with the beauty you choose — come pick out your stone today.
-        </p>
-      </div>
       <div style="position: relative; width: 100%; height: 700px; overflow: hidden;">
         <video autoplay muted loop style="width: 100%; height: 100%; object-fit: cover;">
           <source src="assets/css/img/OGM.slab.video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
+        <!-- Text Overlay -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.3); text-align: center;">
+          <div style="color: white; max-width: 600px; padding: 2rem;">
+            <h2 style="font-size: 3.125rem; font-weight: 700; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Your Stone. Your Story.</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 1.5rem; color: white; font-weight: 600; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);">Start your project by hand-selecting your dream slab.</p>
+            <a href="contact.html" class="btn" style="background: transparent; color: white; padding: 0.75rem 1.6rem; border: 2px solid var(--accent); border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 1rem; cursor: pointer; display: inline-block; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);" onmouseover="this.style.background='var(--accent)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.3)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='transparent'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.2)'; this.style.transform='translateY(0)';">Start Your Selection</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -355,7 +402,7 @@
     <section class="cta">
       <div class="container cta-inner">
         <div class="section-label">Trade Partners</div>
-        <h2 class="cta-title">Builders & contractors</h2>
+        <h2 class="cta-title">Builders & Contractors</h2>
         <p class="cta-subtitle">
           Need a reliable countertop partner for repeat projects? We offer fast turnaround, competitive pricing, and professional installation for builders, remodelers, and designers.
         </p>
@@ -368,7 +415,7 @@
       <div class="container">
         <div class="section-header">
           <div class="section-label">See What Others Are Saying</div>
-          <h2 class="section-title">Read our reviews</h2>
+          <h2 class="section-title">Read Our Reviews</h2>
           <p class="section-subtitle">
             Find us on your favorite review platform to see real feedback from homeowners and contractors we've worked with.
           </p>
@@ -392,7 +439,7 @@
         <div class="footer-col">
             <h3>COMPANY</h3>
             <a href="about.html">About</a>
-            <a href="resources.html">Our Promise</a>
+            <a href="resources.html#warranty">Our Promise</a>
             <a href="resources.html">Areas We Serve</a>
         </div>
 
@@ -400,27 +447,27 @@
         <div class="footer-col">
             <h3>CONTACT US</h3>
 
-            <p><i class="fa-solid fa-square-phone"></i> 910.484.5277</p>
+            <p><i class="fa-solid fa-square-phone"></i> <a href="tel:+19104845277" style="color: white; text-decoration: none;">910.484.5277</a></p>
 
             <p class="footer-email">
                 <i class="fa-solid fa-square-envelope"></i>
-                info@oliveglassandmarble.com
+                <a href="mailto:info@oliveglassandmarble.com" style="color: white; text-decoration: none;">info@oliveglassandmarble.com</a>
             </p>
 
             <p>
                 <i class="fa-solid fa-location-dot"></i>
-                714 Robeson Street<br>
-                Fayetteville, NC 28305
+                <a href="https://maps.google.com/?q=714+Robeson+Street+Fayetteville+NC+28305" target="_blank" style="color: white; text-decoration: none;">714 Robeson Street<br>
+                Fayetteville, NC 28305</a>
             </p>
         </div>
 
         <!-- COLUMN 3 -->
         <div class="footer-col">
             <h3>CONNECT</h3>
-            <div class="social-icons">
+            <div class="social-icons" style="text-align: center;">
                 <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fa-brands fa-square-facebook"></i></a>
                 <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="fa-brands fa-square-instagram"></i></a>
-                <a href="https://www.google.com/maps/" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i></a>
+                <a href="https://www.x.com/" target="_blank" rel="noopener"><i class="fa-brands fa-square-x-twitter"></i></a>
             </div>
         </div>
 
@@ -433,19 +480,23 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Randomize gallery images
+    // Randomize gallery images with Fisher-Yates shuffle
     (function () {
-      const galleryItems = document.querySelectorAll('.gallery-item img');
+      const galleryItems = Array.from(document.querySelectorAll('.gallery-item img'));
       const totalCountertops = 23; // countertops1.jpg through countertops23.jpg
-      const usedIndices = new Set();
       
-      galleryItems.forEach(img => {
-        let randomIdx;
-        do {
-          randomIdx = Math.floor(Math.random() * totalCountertops) + 1;
-        } while (usedIndices.has(randomIdx) && usedIndices.size < totalCountertops);
-        
-        usedIndices.add(randomIdx);
+      // Create array of indices [1, 2, 3, ..., 23]
+      const indices = Array.from({ length: totalCountertops }, (_, i) => i + 1);
+      
+      // Fisher-Yates shuffle algorithm
+      for (let i = indices.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [indices[i], indices[j]] = [indices[j], indices[i]];
+      }
+      
+      // Assign shuffled indices to gallery items
+      galleryItems.forEach((img, idx) => {
+        const randomIdx = indices[idx];
         img.src = `assets/css/img/countertops${randomIdx}.jpg`;
         img.alt = `Countertop project ${randomIdx}`;
       });
@@ -456,22 +507,61 @@
       const slider = document.getElementById('heroSlider');
       if (!slider) return;
       const slides = Array.from(slider.querySelectorAll('.hero-slide'));
+      const bubbles = Array.from(document.querySelectorAll('.hero-bubble'));
       let current = 0;
       const total = slides.length;
-      const cycleInterval = 5000; // 5 seconds per slide
+      const cycleInterval = 2000; // 2 seconds per slide
+      let autoRotateInterval;
 
       function goToSlide(index) {
         slides.forEach((s, i) => {
           s.classList.toggle('active', i === index);
         });
+        bubbles.forEach((b, i) => {
+          b.classList.toggle('active', i === index);
+        });
+        current = index;
+        // Reset auto-rotate when manually navigating
+        clearInterval(autoRotateInterval);
+        startAutoRotate();
       }
 
       // Auto-cycle slides
-      setInterval(() => {
-        current = (current + 1) % total;
-        goToSlide(current);
-      }, cycleInterval);
+      function startAutoRotate() {
+        autoRotateInterval = setInterval(() => {
+          current = (current + 1) % total;
+          goToSlide(current);
+        }, cycleInterval);
+      }
+
+      // Bubble click handlers
+      bubbles.forEach((bubble, index) => {
+        bubble.addEventListener('click', () => {
+          goToSlide(index);
+        });
+      });
+
+      // Start auto-rotation
+      startAutoRotate();
     })();
+
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+
+      navToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+      });
+
+      // Close menu when a link is clicked
+      const links = navLinks.querySelectorAll('a');
+      links.forEach(link => {
+        link.addEventListener('click', function() {
+          navLinks.classList.remove('active');
+        });
+      });
+    });
   </script>
 </body>
 </html>

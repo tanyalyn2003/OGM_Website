@@ -435,6 +435,29 @@ header {
 @media (max-width: 768px) {
   .nav-links {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-light);
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem 1.25rem;
+    border-top: 1px solid var(--border-subtle);
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
   }
 
   .nav-cta {
@@ -454,7 +477,7 @@ header {
   position: relative;
   overflow: hidden;
   background: var(--bg-light);
-  padding: 3.5rem 0;
+  padding: 1.75rem 0;
 }
 
 .hero-inner {
@@ -465,7 +488,7 @@ header {
 }
 
 .hero-content h1 {
-  margin-bottom: 1.2rem;
+  margin-bottom: 2.4rem;
   color: var(--text-main);
 }
 
@@ -476,7 +499,7 @@ header {
 .hero-subtitle {
   font-size: 1.05rem;
   color: var(--text-muted);
-  margin-bottom: 1.8rem;
+  margin-bottom: 3.6rem;
   line-height: 1.7;
 }
 
@@ -581,12 +604,12 @@ header {
 .section-header {
   text-align: center;
   max-width: 600px;
-  margin: 0 auto 3rem;
+  margin: 0 auto 1.5rem;
 }
 
 .section-label {
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   letter-spacing: 0.15em;
   color: var(--accent);
   margin-bottom: 0.8rem;
@@ -602,6 +625,49 @@ header {
   font-size: 1rem;
   color: var(--text-muted);
   line-height: 1.7;
+}
+
+/* About Page Spacing */
+#about {
+  padding-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  #about {
+    padding-top: 1.5rem;
+  }
+}
+
+/* Our Values Spacing */
+#values-section {
+  background: var(--surface);
+  padding: 4rem 0 2.5rem;
+}
+
+#values-section .section-header {
+  margin-bottom: 3.5rem;
+}
+
+#values-section .cards-grid {
+  margin-bottom: 3.5rem;
+}
+
+#values-section .values-follow-up {
+  margin-top: 5rem;
+}
+
+@media (max-width: 768px) {
+  #values-section {
+    padding: 3rem 0 2rem;
+  }
+
+  #values-section .section-header {
+    margin-bottom: 2.75rem;
+  }
+
+  #values-section .values-follow-up {
+    margin-top: 4rem;
+  }
 }
 
 /* ============================================================================
@@ -765,8 +831,8 @@ header {
    ============================================================================ */
 
 .cta {
-  background: var(--bg-dark);
-  color: #f9fafb;
+  background: white;
+  color: var(--text-main);
 }
 
 .cta-inner {
@@ -785,7 +851,7 @@ header {
 
 .cta-subtitle {
   font-size: 1rem;
-  color: #d1d5db;
+  color: var(--text-muted);
   margin-bottom: 1.8rem;
   line-height: 1.7;
 }
@@ -1087,4 +1153,59 @@ footer {
     font-size: 14px;
     color: #999;
     margin-top: 10px;
+}
+
+/* ============================================================================
+   FLIP CARDS (Edge Profiles)
+   ============================================================================ */
+
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 280px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card-front {
+  background-color: white;
+  color: var(--text-main);
+}
+
+.flip-card-back {
+  background-color: white;
+  color: var(--text-main);
+  transform: rotateY(180deg);
+  padding: 0;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  overflow: hidden;
 }

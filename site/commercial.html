@@ -249,7 +249,7 @@
         <div class="footer-col">
             <h3>COMPANY</h3>
             <a href="about.html">About</a>
-            <a href="resources.html">Our Promise</a>
+            <a href="resources.html#warranty">Our Promise</a>
             <a href="resources.html">Areas We Serve</a>
         </div>
 
@@ -257,27 +257,27 @@
         <div class="footer-col">
             <h3>CONTACT US</h3>
 
-            <p><i class="fa-solid fa-square-phone"></i> 910.484.5277</p>
+            <p><i class="fa-solid fa-square-phone"></i> <a href="tel:+19104845277" style="color: white; text-decoration: none;">910.484.5277</a></p>
 
             <p class="footer-email">
                 <i class="fa-solid fa-square-envelope"></i>
-                info@oliveglassandmarble.com
+                <a href="mailto:info@oliveglassandmarble.com" style="color: white; text-decoration: none;">info@oliveglassandmarble.com</a>
             </p>
 
             <p>
                 <i class="fa-solid fa-location-dot"></i>
-                714 Robeson Street<br>
-                Fayetteville, NC 28305
+                <a href="https://maps.google.com/?q=714+Robeson+Street+Fayetteville+NC+28305" target="_blank" style="color: white; text-decoration: none;">714 Robeson Street<br>
+                Fayetteville, NC 28305</a>
             </p>
         </div>
 
         <!-- COLUMN 3 -->
         <div class="footer-col">
             <h3>CONNECT</h3>
-            <div class="social-icons">
+            <div class="social-icons" style="text-align: center;">
                 <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fa-brands fa-square-facebook"></i></a>
                 <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="fa-brands fa-square-instagram"></i></a>
-                <a href="https://www.google.com/maps/" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i></a>
+                <a href="https://www.x.com/" target="_blank" rel="noopener"><i class="fa-brands fa-square-x-twitter"></i></a>
             </div>
         </div>
 
@@ -289,6 +289,24 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+    
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+
+      navToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+      });
+
+      // Close menu when a link is clicked
+      const links = navLinks.querySelectorAll('a');
+      links.forEach(link => {
+        link.addEventListener('click', function() {
+          navLinks.classList.remove('active');
+        });
+      });
+    });
   </script>
 </body>
 </html>
