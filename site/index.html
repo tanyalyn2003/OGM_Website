@@ -237,31 +237,31 @@
 
         <div class="gallery-grid">
           <figure class="gallery-item">
-            <img src="assets/css/img/countertops1.jpg" alt="Countertop project 1" />
+            <img src="assets/css/img/countertops1.jpg" alt="Countertop project 1" loading="lazy" decoding="async" />
           </figure>
           <figure class="gallery-item">
-            <img src="assets/css/img/countertops2.jpg" alt="Countertop project 2" />
+            <img src="assets/css/img/countertops2.jpg" alt="Countertop project 2" loading="lazy" decoding="async" />
           </figure>
           <figure class="gallery-item">
-            <img src="assets/css/img/countertops3.jpg" alt="Countertop project 3" />
+            <img src="assets/css/img/countertops3.jpg" alt="Countertop project 3" loading="lazy" decoding="async" />
           </figure>
           <figure class="gallery-item">
-            <img src="assets/css/img/countertops4.jpg" alt="Countertop project 4" />
+            <img src="assets/css/img/countertops4.jpg" alt="Countertop project 4" loading="lazy" decoding="async" />
           </figure>
           <figure class="gallery-item">
-            <img src="assets/css/img/countertops5.jpg" alt="Countertop project 5" />
+            <img src="assets/css/img/countertops5.jpg" alt="Countertop project 5" loading="lazy" decoding="async" />
           </figure>
           <figure class="gallery-item">
-            <img src="assets/css/img/countertops6.jpg" alt="Countertop project 6" />
+            <img src="assets/css/img/countertops6.jpg" alt="Countertop project 6" loading="lazy" decoding="async" />
           </figure>
           <figure class="gallery-item">
-            <img src="assets/css/img/countertops7.jpg" alt="Countertop project 7" />
+            <img src="assets/css/img/countertops7.jpg" alt="Countertop project 7" loading="lazy" decoding="async" />
           </figure>
           <figure class="gallery-item">
-            <img src="assets/css/img/countertops8.jpg" alt="Countertop project 8" />
+            <img src="assets/css/img/countertops8.jpg" alt="Countertop project 8" loading="lazy" decoding="async" />
           </figure>
           <figure class="gallery-item">
-            <img src="assets/css/img/countertops9.jpg" alt="Countertop project 9" />
+            <img src="assets/css/img/countertops9.jpg" alt="Countertop project 9" loading="lazy" decoding="async" />
           </figure>
         </div>
       </div>
@@ -383,7 +383,7 @@
     <!-- Video Section -->
     <section class="video-section" style="background: var(--surface); padding: 50px 0 0 0;">
       <div style="position: relative; width: 100%; height: 700px; overflow: hidden;">
-        <video autoplay muted loop style="width: 100%; height: 100%; object-fit: cover;">
+        <video id="ogmVideo" preload="metadata" muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
           <source src="assets/css/img/OGM.slab.video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -480,28 +480,6 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Randomize gallery images with Fisher-Yates shuffle
-    (function () {
-      const galleryItems = Array.from(document.querySelectorAll('.gallery-item img'));
-      const totalCountertops = 23; // countertops1.jpg through countertops23.jpg
-      
-      // Create array of indices [1, 2, 3, ..., 23]
-      const indices = Array.from({ length: totalCountertops }, (_, i) => i + 1);
-      
-      // Fisher-Yates shuffle algorithm
-      for (let i = indices.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [indices[i], indices[j]] = [indices[j], indices[i]];
-      }
-      
-      // Assign shuffled indices to gallery items
-      galleryItems.forEach((img, idx) => {
-        const randomIdx = indices[idx];
-        img.src = `assets/css/img/countertops${randomIdx}.jpg`;
-        img.alt = `Countertop project ${randomIdx}`;
-      });
-    })();
-
     // Hero slider auto-rotate with smooth fade
     (function () {
       const slider = document.getElementById('heroSlider');
@@ -547,6 +525,21 @@
 
     // Mobile menu toggle
     document.addEventListener('DOMContentLoaded', function() {
+      // Video autoplay for mobile
+      const video = document.getElementById('ogmVideo');
+      if (video) {
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              video.play();
+            })
+            .catch(error => {
+              console.log('Video autoplay failed on this browser');
+            });
+        }
+      }
+
       const navToggle = document.querySelector('.nav-toggle');
       const navLinks = document.querySelector('.nav-links');
 
